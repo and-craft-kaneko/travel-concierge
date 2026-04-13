@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旅行コンシェルジュ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>旅行コンシェルジュ</h1>
+      <p class="subtitle">あなたにぴったりのモデルコースをご提案します</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>ご旅行の情報を入力してください</h2>
+      <form id="travel-form">
+        <div class="form-group">
+          <label for="accommodation">宿泊施設</label>
+          <select id="accommodation" required>
+            <option value="">選択してください</option>
+            <option value="sora">宙（長野県小諸市）</option>
+            <option value="michi">道（長野県長野市）</option>
+            <option value="chojuro">長寿楼（長野県小諸市）</option>
+            <option value="timeless">タイムレス山中湖（山梨県山中湖村）</option>
+            <option value="nakano">中野の間（長野県上田市）</option>
+          </select>
+        </div>
+
+        <div class="form-group form-row">
+          <div class="form-half">
+            <label for="checkin">チェックイン</label>
+            <input type="date" id="checkin" required>
+          </div>
+          <div class="form-half">
+            <label for="checkout">チェックアウト</label>
+            <input type="date" id="checkout" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="preferences">趣味・年齢・ご要望</label>
+          <textarea id="preferences" rows="4" placeholder="例：60代夫婦、温泉が好き、歴史に興味がある、のんびり過ごしたい"></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn">モデルコースを作成</button>
+      </form>
+    </section>
+
+    <section class="result-section" id="result-section" style="display: none;">
+      <h2 id="result-title"></h2>
+      <p id="result-subtitle"></p>
+      <div id="course-timeline"></div>
+      <div id="course-tips"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 旅行コンシェルジュ</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
