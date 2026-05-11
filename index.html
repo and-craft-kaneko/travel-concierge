@@ -6,15 +6,15 @@
   <title>make i trip - your trip, your way</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Sacramento&family=Italianno&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ヘッダー（4枚の写真+中央オーバーレイロゴ） -->
+  <!-- ヘッダー -->
   <header class="site-header">
     <div class="lang-switch">
       <a href="#" class="lang-link">英語</a>
-      <span class="lang-sep">/</span>
+      <span class="lang-sep">／</span>
       <a href="#" class="lang-link">台湾中国</a>
     </div>
 
@@ -26,7 +26,7 @@
     </div>
 
     <div class="hero-logo">
-      <h1 class="logo">make <span class="logo-i">i</span> trip</h1>
+      <h1 class="logo">make<span class="logo-i">i</span>trip</h1>
       <p class="tagline">your trip, your way</p>
     </div>
   </header>
@@ -43,40 +43,64 @@
 
   <!-- 長野県4エリアの紹介 -->
   <section class="regions">
-    <div class="regions-inner">
-      <!-- 中央のマップ -->
-      <div class="map-container">
-        <div class="map-shape">
-          <div class="map-region map-hokushin"><span>北信</span></div>
-          <div class="map-region map-toshin"><span>東信</span></div>
-          <div class="map-region map-chushin"><span>中信</span></div>
-          <div class="map-region map-nanshin"><span>南信</span></div>
+    <div class="regions-layout">
+      <!-- マップ + カード + コネクター -->
+      <div class="regions-map-area">
+        <!-- 長野県のマップ（SVG） -->
+        <svg class="nagano-map" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- 北信 (top) -->
+          <path d="M 100 10 L 170 50 L 145 110 L 90 100 L 55 70 Z"
+                fill="#c8d83a" stroke="#fff" stroke-width="2" />
+          <text x="115" y="65" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">北信</text>
+
+          <!-- 東信 (middle-right) -->
+          <path d="M 145 110 L 185 130 L 170 200 L 130 195 L 110 150 Z"
+                fill="#4ec3e0" stroke="#fff" stroke-width="2" />
+          <text x="148" y="160" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">東信</text>
+
+          <!-- 中信 (middle-left) -->
+          <path d="M 55 70 L 90 100 L 110 150 L 85 200 L 30 180 L 20 110 Z"
+                fill="#f5a4c0" stroke="#fff" stroke-width="2" />
+          <text x="65" y="145" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">中信</text>
+
+          <!-- 南信 (bottom) -->
+          <path d="M 85 200 L 130 195 L 170 200 L 140 270 L 70 260 Z"
+                fill="#f5d030" stroke="#fff" stroke-width="2" />
+          <text x="115" y="240" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">南信</text>
+        </svg>
+
+        <!-- 北信カード（左上） -->
+        <div class="region-card region-card-tl">
+          <div class="region-card-photo"></div>
+          <p class="region-card-text"><strong>北信エリア</strong>の特徴と説明</p>
+        </div>
+
+        <!-- 東信カード（右側） -->
+        <div class="region-card region-card-r">
+          <div class="region-card-photo"></div>
+          <p class="region-card-text"><strong>東信エリア</strong>の特徴と説明</p>
+        </div>
+
+        <!-- 中信カード（左下） -->
+        <div class="region-card region-card-bl">
+          <div class="region-card-photo"></div>
+          <p class="region-card-text"><strong>中信エリア</strong>の特徴と説明</p>
+        </div>
+
+        <!-- 南信カード（右下） -->
+        <div class="region-card region-card-br">
+          <div class="region-card-photo"></div>
+          <p class="region-card-text"><strong>南信エリア</strong>の特徴と説明</p>
         </div>
       </div>
 
-      <!-- 周りに配置される4枚のカード（コーナー配置） -->
-      <div class="region-card region-card-tl">
-        <div class="region-card-photo"></div>
-        <p class="region-card-text">エリアの特徴と説明</p>
-      </div>
-      <div class="region-card region-card-tr">
-        <div class="region-card-photo"></div>
-        <p class="region-card-text">エリアの特徴と説明</p>
-      </div>
-      <div class="region-card region-card-bl">
-        <div class="region-card-photo"></div>
-        <p class="region-card-text">エリアの特徴と説明</p>
-      </div>
-      <div class="region-card region-card-br">
-        <div class="region-card-photo"></div>
-        <p class="region-card-text">エリアの特徴と説明</p>
-      </div>
-
-      <!-- タイトルと説明 -->
-      <div class="regions-title-block">
-        <h2 class="regions-title">長野県の4つのエリアの<br>楽しみ方</h2>
+      <!-- 右側のタイトル・説明 -->
+      <div class="regions-text">
+        <h2 class="regions-title">長野県の<br>4つのエリアの<br>楽しみ方</h2>
         <p class="regions-desc">
-          長野県は大きく分けて4つあるそれぞれのエリアで違った楽しみがあります。
+          長野県は大きく分けて<br>
+          4つあるそれぞれのエリアで<br>
+          違った楽しみがあります。
         </p>
       </div>
     </div>
@@ -91,22 +115,10 @@
       <div class="form-block">
         <h3 class="form-label">誰と旅する</h3>
         <div class="option-row option-row-4">
-          <label class="option-card">
-            <input type="radio" name="companion" value="solo">
-            <span class="option-card-inner">1人</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="companion" value="couple">
-            <span class="option-card-inner">2人</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="companion" value="group">
-            <span class="option-card-inner">グループ</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="companion" value="family">
-            <span class="option-card-inner">家族</span>
-          </label>
+          <label class="option-card"><input type="radio" name="companion" value="solo"><span class="option-card-inner">1人</span></label>
+          <label class="option-card"><input type="radio" name="companion" value="couple"><span class="option-card-inner">2人</span></label>
+          <label class="option-card"><input type="radio" name="companion" value="group"><span class="option-card-inner">グループ</span></label>
+          <label class="option-card"><input type="radio" name="companion" value="family"><span class="option-card-inner">家族</span></label>
         </div>
       </div>
 
@@ -114,22 +126,10 @@
       <div class="form-block">
         <h3 class="form-label">行きたいエリア</h3>
         <div class="option-row option-row-4">
-          <label class="option-card">
-            <input type="radio" name="area" value="hokushin">
-            <span class="option-card-inner">北信</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="area" value="chushin">
-            <span class="option-card-inner">中信</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="area" value="toshin">
-            <span class="option-card-inner">東信</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="area" value="nanshin">
-            <span class="option-card-inner">南信</span>
-          </label>
+          <label class="option-card"><input type="radio" name="area" value="hokushin"><span class="option-card-inner">北信</span></label>
+          <label class="option-card"><input type="radio" name="area" value="chushin"><span class="option-card-inner">中信</span></label>
+          <label class="option-card"><input type="radio" name="area" value="toshin"><span class="option-card-inner">東信</span></label>
+          <label class="option-card"><input type="radio" name="area" value="nanshin"><span class="option-card-inner">南信</span></label>
         </div>
       </div>
 
@@ -137,22 +137,10 @@
       <div class="form-block">
         <h3 class="form-label">シーズン</h3>
         <div class="option-row option-row-4">
-          <label class="option-card">
-            <input type="radio" name="season" value="spring">
-            <span class="option-card-inner">春</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="season" value="summer">
-            <span class="option-card-inner">夏</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="season" value="autumn">
-            <span class="option-card-inner">秋</span>
-          </label>
-          <label class="option-card">
-            <input type="radio" name="season" value="winter">
-            <span class="option-card-inner">冬</span>
-          </label>
+          <label class="option-card"><input type="radio" name="season" value="spring"><span class="option-card-inner">春</span></label>
+          <label class="option-card"><input type="radio" name="season" value="summer"><span class="option-card-inner">夏</span></label>
+          <label class="option-card"><input type="radio" name="season" value="autumn"><span class="option-card-inner">秋</span></label>
+          <label class="option-card"><input type="radio" name="season" value="winter"><span class="option-card-inner">冬</span></label>
         </div>
       </div>
 
