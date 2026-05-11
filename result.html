@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あなたにおすすめのスポット - make i trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー（簡易版） -->
+  <header class="site-header-simple">
+    <a href="index.html" class="logo-link">
+      <h1 class="logo">make <span class="logo-i">i</span> trip</h1>
+    </a>
+  </header>
+
+  <!-- 結果セクション -->
+  <section class="result-section">
+    <h2 class="section-title">あなたにおすすめのスポット</h2>
+
+    <!-- 景色 -->
+    <div class="result-category">
+      <h3 class="result-category-title">景色</h3>
+      <div class="spot-list" id="spots-scenery"></div>
+    </div>
+
+    <!-- 文化 -->
+    <div class="result-category">
+      <h3 class="result-category-title">文化</h3>
+      <div class="spot-list" id="spots-culture"></div>
+    </div>
+
+    <!-- 食 -->
+    <div class="result-category">
+      <h3 class="result-category-title">食</h3>
+      <div class="spot-list" id="spots-food"></div>
+    </div>
+
+    <div class="back-button-wrap">
+      <a href="index.html" class="back-button">戻って選択</a>
+    </div>
+  </section>
+
+  <!-- 宿を予約する（トップと同じ） -->
+  <section class="hotels">
+    <h2 class="section-title">宿を予約する</h2>
+    <div class="hotel-grid">
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-hokushin">北信エリア</span>
+        <p class="hotel-name">駅</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-hokushin">北信エリア</span>
+        <p class="hotel-name">道</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-toshin">東信エリア</span>
+        <p class="hotel-name">宙</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-toshin">東信エリア</span>
+        <p class="hotel-name">長寿楼</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-chushin">中信エリア</span>
+        <p class="hotel-name">門</p>
+      </div>
+    </div>
+    <div class="hotel-link-wrap">
+      <a href="#" class="hotel-link">宿の紹介ページへ</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 make i trip</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="result.js"></script>
+</body>
+</html>

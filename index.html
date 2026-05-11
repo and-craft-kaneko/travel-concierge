@@ -3,66 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>旅行コンシェルジュ</title>
+  <title>make i trip - your trip, your way</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <h1>旅行コンシェルジュ</h1>
-      <p class="subtitle">あなたにぴったりのモデルコースをご提案します</p>
+  <!-- ヘッダー（4枚の写真+中央オーバーレイロゴ） -->
+  <header class="site-header">
+    <div class="lang-switch">
+      <a href="#" class="lang-link">英語</a>
+      <span class="lang-sep">/</span>
+      <a href="#" class="lang-link">台湾中国</a>
+    </div>
+
+    <div class="hero-photos">
+      <div class="hero-photo hero-photo-1"></div>
+      <div class="hero-photo hero-photo-2"></div>
+      <div class="hero-photo hero-photo-3"></div>
+      <div class="hero-photo hero-photo-4"></div>
+    </div>
+
+    <div class="hero-logo">
+      <h1 class="logo">make <span class="logo-i">i</span> trip</h1>
+      <p class="tagline">your trip, your way</p>
     </div>
   </header>
 
-  <main>
-    <section class="form-section">
-      <h2>ご旅行の情報を入力してください</h2>
-      <form id="travel-form">
-        <div class="form-group">
-          <label for="accommodation">宿泊施設</label>
-          <select id="accommodation" required>
-            <option value="">選択してください</option>
-            <option value="sora">宙（長野県小諸市）</option>
-            <option value="michi">道（長野県長野市）</option>
-            <option value="chojuro">長寿楼（長野県小諸市）</option>
-            <option value="timeless">タイムレス山中湖（山梨県山中湖村）</option>
-            <option value="nakano">中野の間（長野県上田市）</option>
-          </select>
+  <!-- コンセプト -->
+  <section class="concept">
+    <h2 class="section-title">コンセプト</h2>
+    <p class="concept-text">
+      旅は、その土地の文化、風景、食全てを満喫するものです。<br>
+      make i trip は自分でつくる自分だけの旅です。<br>
+      宿を決めて自分だけのオリジナル旅行プランを作りましょう
+    </p>
+  </section>
+
+  <!-- 長野県4エリアの紹介 -->
+  <section class="regions">
+    <div class="regions-inner">
+      <!-- 中央のマップ -->
+      <div class="map-container">
+        <div class="map-shape">
+          <div class="map-region map-hokushin"><span>北信</span></div>
+          <div class="map-region map-toshin"><span>東信</span></div>
+          <div class="map-region map-chushin"><span>中信</span></div>
+          <div class="map-region map-nanshin"><span>南信</span></div>
         </div>
+      </div>
 
-        <div class="form-group form-row">
-          <div class="form-half">
-            <label for="checkin">チェックイン</label>
-            <input type="date" id="checkin" required>
-          </div>
-          <div class="form-half">
-            <label for="checkout">チェックアウト</label>
-            <input type="date" id="checkout" required>
-          </div>
+      <!-- 周りに配置される4枚のカード（コーナー配置） -->
+      <div class="region-card region-card-tl">
+        <div class="region-card-photo"></div>
+        <p class="region-card-text">エリアの特徴と説明</p>
+      </div>
+      <div class="region-card region-card-tr">
+        <div class="region-card-photo"></div>
+        <p class="region-card-text">エリアの特徴と説明</p>
+      </div>
+      <div class="region-card region-card-bl">
+        <div class="region-card-photo"></div>
+        <p class="region-card-text">エリアの特徴と説明</p>
+      </div>
+      <div class="region-card region-card-br">
+        <div class="region-card-photo"></div>
+        <p class="region-card-text">エリアの特徴と説明</p>
+      </div>
+
+      <!-- タイトルと説明 -->
+      <div class="regions-title-block">
+        <h2 class="regions-title">長野県の4つのエリアの<br>楽しみ方</h2>
+        <p class="regions-desc">
+          長野県は大きく分けて4つあるそれぞれのエリアで違った楽しみがあります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AIコンシェルジュ lite -->
+  <section class="concierge">
+    <h2 class="section-title">AIコンシェルジュ lite</h2>
+
+    <form id="concierge-form">
+      <!-- 誰と旅する -->
+      <div class="form-block">
+        <h3 class="form-label">誰と旅する</h3>
+        <div class="option-row option-row-4">
+          <label class="option-card">
+            <input type="radio" name="companion" value="solo">
+            <span class="option-card-inner">1人</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="companion" value="couple">
+            <span class="option-card-inner">2人</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="companion" value="group">
+            <span class="option-card-inner">グループ</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="companion" value="family">
+            <span class="option-card-inner">家族</span>
+          </label>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="preferences">趣味・年齢・ご要望</label>
-          <textarea id="preferences" rows="4" placeholder="例：60代夫婦、温泉が好き、歴史に興味がある、のんびり過ごしたい"></textarea>
+      <!-- 行きたいエリア -->
+      <div class="form-block">
+        <h3 class="form-label">行きたいエリア</h3>
+        <div class="option-row option-row-4">
+          <label class="option-card">
+            <input type="radio" name="area" value="hokushin">
+            <span class="option-card-inner">北信</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="area" value="chushin">
+            <span class="option-card-inner">中信</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="area" value="toshin">
+            <span class="option-card-inner">東信</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="area" value="nanshin">
+            <span class="option-card-inner">南信</span>
+          </label>
         </div>
+      </div>
 
-        <button type="submit" id="submit-btn">モデルコースを作成</button>
-      </form>
-    </section>
+      <!-- シーズン -->
+      <div class="form-block">
+        <h3 class="form-label">シーズン</h3>
+        <div class="option-row option-row-4">
+          <label class="option-card">
+            <input type="radio" name="season" value="spring">
+            <span class="option-card-inner">春</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="season" value="summer">
+            <span class="option-card-inner">夏</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="season" value="autumn">
+            <span class="option-card-inner">秋</span>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="season" value="winter">
+            <span class="option-card-inner">冬</span>
+          </label>
+        </div>
+      </div>
 
-    <section class="result-section" id="result-section" style="display: none;">
-      <h2 id="result-title"></h2>
-      <p id="result-subtitle"></p>
-      <div id="course-timeline"></div>
-      <div id="course-tips"></div>
-    </section>
-  </main>
+      <!-- どんな旅が好み？ -->
+      <div class="form-block">
+        <h3 class="form-label">どんな旅が好み？</h3>
+        <div class="option-grid">
+          <label class="option-card-photo">
+            <input type="radio" name="preference" value="history">
+            <span class="option-photo option-photo-history"></span>
+            <span class="option-photo-label">歴史伝統景観</span>
+          </label>
+          <label class="option-card-photo">
+            <input type="radio" name="preference" value="culture">
+            <span class="option-photo option-photo-culture"></span>
+            <span class="option-photo-label">寺社仏閣文化</span>
+          </label>
+          <label class="option-card-photo">
+            <input type="radio" name="preference" value="garden">
+            <span class="option-photo option-photo-garden"></span>
+            <span class="option-photo-label">庭園景観</span>
+          </label>
+          <label class="option-card-photo">
+            <input type="radio" name="preference" value="nature">
+            <span class="option-photo option-photo-nature"></span>
+            <span class="option-photo-label">雄大な自然</span>
+          </label>
+          <label class="option-card-photo">
+            <input type="radio" name="preference" value="onsen">
+            <span class="option-photo option-photo-onsen"></span>
+            <span class="option-photo-label">温泉地温泉</span>
+          </label>
+          <label class="option-card-photo">
+            <input type="radio" name="preference" value="gourmet">
+            <span class="option-photo option-photo-gourmet"></span>
+            <span class="option-photo-label">ご当地美食</span>
+          </label>
+        </div>
+      </div>
 
-  <footer>
-    <p>&copy; 2026 旅行コンシェルジュ</p>
+      <button type="submit" class="go-button">GO</button>
+    </form>
+  </section>
+
+  <!-- 宿を予約する -->
+  <section class="hotels">
+    <h2 class="section-title">宿を予約する</h2>
+    <div class="hotel-grid">
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-hokushin">北信<br>エリア</span>
+        <p class="hotel-name">駅</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-hokushin">北信<br>エリア</span>
+        <p class="hotel-name">道</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-toshin">東信<br>エリア</span>
+        <p class="hotel-name">宙</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-toshin">東信<br>エリア</span>
+        <p class="hotel-name">長寿楼</p>
+      </div>
+      <div class="hotel-card">
+        <span class="hotel-area-tag tag-chushin">中信<br>エリア</span>
+        <p class="hotel-name">門</p>
+      </div>
+    </div>
+    <div class="hotel-link-wrap">
+      <a href="#" class="hotel-link">宿の紹介ページへ</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 make i trip</p>
   </footer>
 
   <script src="data.js"></script>
